@@ -1,0 +1,29 @@
+<div class="calendar">
+  <div class="weekdays">
+    <div class="weekday" *ngFor="let day of weekdays">{{ day }}</div>
+  </div>
+  <div class="days">
+    <div class="day" *ngFor="let date of dates">
+      <div class="date">{{ date }}</div>
+      <div
+        class="appointments"
+        cdkDropList
+        #appoitsmentsList="cdkDropList"
+        [cdkDropListData]="getAppointments(date)"
+        (cdkDropListDropped)="onDrop($event)"
+      >
+        <div
+          class="appointment"
+          *ngFor="let appointment of getAppointments(date)"
+          cdkDrag
+        >
+          <div class="title">{{ appointment.title }}</div>
+          <div class="description">{{ appointment.description }}</div>
+          <button mat-icon-button (click)="deleteAppointment(appointment)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
