@@ -29,3 +29,9 @@ form {
     margin-top: 16px;
   }
 }
+
+@media screen and (max-width: 900px) {
+  form {
+    margin: 0 auto;
+  }
+}

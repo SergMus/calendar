@@ -11,8 +11,6 @@ export class CalendarService {
     this.appointments
   );
 
-  constructor() {}
-
   getCalendarData(): Observable<Appointment[]> {
     return this.appointmentsSubject.asObservable();
   }

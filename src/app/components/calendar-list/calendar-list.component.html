@@ -8,7 +8,6 @@
       <div
         class="appointments"
         cdkDropList
-        #appoitsmentsList="cdkDropList"
         [cdkDropListData]="getAppointments(date)"
         (cdkDropListDropped)="onDrop($event)"
       >
